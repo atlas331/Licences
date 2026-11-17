@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Licences : repérez les logiciels payés par l’entreprise et utilisés par personne</title>
+<meta name="description" content="Licences liste tous les abonnements de votre entreprise, repère les comptes inutilisés et les doublons, et vous prévient avant chaque renouvellement. 79 € par mois, remboursé si ça ne vous sert pas.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Vous payez des logiciels que personne n’utilise.">
+<meta property="og:description" content="Licences repère les comptes inutilisés et les doublons dans les abonnements de votre entreprise. 79 € par mois, remboursé si ça ne vous sert pas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#1d2b64;--marqueur:#ffd93d;--fond:#ffffff;--gris:#f2f3f7;--texte:#2a3150;--doux:#5b6275;--trait:#dadde6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--texte);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:84px}
+h1,h2,.logo{font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--encre);letter-spacing:-.02em;line-height:1.08;margin:0}
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+header{padding:18px 0}
+.logo{font-size:22px;font-weight:800}
+h1{font-size:clamp(34px,9.5vw,52px);font-weight:800;margin:14px 0 16px}
+h2{font-size:clamp(26px,6.5vw,34px);font-weight:800;margin-bottom:12px}
+.mark{background:linear-gradient(transparent 8%,var(--marqueur) 8%,var(--marqueur) 92%,transparent 92%);padding:0 .12em}
+.lead{font-size:19px;color:var(--texte);margin:0 0 22px}
+.btn{display:block;text-align:center;background:var(--encre);color:#fff;text-decoration:none;font-weight:700;font-size:18px;padding:17px 20px;border-radius:6px;min-height:56px}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--marqueur);outline-offset:3px}
+.btn:hover{background:#142054}
+.releve{margin:30px 0 0;border:1px solid var(--trait);border-radius:6px;overflow:hidden;font-size:15px}
+.releve .tete{background:var(--gris);padding:9px 14px;color:var(--doux);font-size:14px}
+.ligne{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:11px 14px;border-top:1px solid var(--trait)}
+.ligne b{font-weight:600}
+.ligne small{grid-column:1;color:var(--doux);font-size:13.5px}
+.ligne .prix{grid-row:1;grid-column:2;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.ligne.alerte{background:var(--marqueur);color:var(--encre)}
+.ligne.alerte small{color:var(--encre)}
+.releve .total{padding:12px 14px;border-top:2px solid var(--encre);font-weight:700;color:var(--encre)}
+.note{font-size:13.5px;color:var(--doux);margin:8px 0 0}
+section{padding:44px 0}
+.rang{border-top:2px solid var(--encre);padding:16px 0 4px}
+.rang h3{margin:0 0 4px;font-size:19px;color:var(--encre)}
+.rang p{margin:0 0 14px}
+.offre{background:var(--gris)}
+.carte{background:#fff;border:2px solid var(--encre);border-radius:6px;padding:22px 20px}
+.montant{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;font-size:52px;color:var(--encre);line-height:1}
+.montant span{font-size:20px;font-weight:700}
+.jour{color:var(--doux);margin:4px 0 16px}
+.carte ul{margin:0 0 20px;padding-left:20px}
+.carte li{margin:4px 0}
+.garantie{border-left:5px solid var(--marqueur);background:#fffbe3;padding:12px 14px;margin:0 0 20px}
+.garantie b{color:var(--encre)}
+.sans{text-align:center;font-weight:600;color:var(--encre);margin:12px 0 0;font-size:15px}
+details{border-top:1px solid var(--trait);padding:14px 0}
+details:last-of-type{border-bottom:1px solid var(--trait)}
+summary{font-weight:700;color:var(--encre);cursor:pointer;min-height:28px}
+details p{margin:10px 0 0}
+footer{padding:28px 0 40px;font-size:14px;color:var(--doux)}
+footer a{color:var(--doux)}
+.barre{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--trait);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
+.barre .btn{max-width:608px;margin:0 auto}
+@media(min-width:760px){body{padding-bottom:0}.barre{display:none}.btn{display:inline-block;padding:17px 34px}.carte .btn{display:block}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">Licences</div></div></header>
+
+<main>
+<div class="wrap">
+  <h1>Vous payez des logiciels que <span class="mark">personne n’utilise.</span></h1>
+  <p class="lead">Licences liste tous les abonnements de votre entreprise, repère les comptes inutilisés et les doublons, et vous prévient avant chaque renouvellement.</p>
+  <a class="btn" href="#offre">Réserver mon accès</a>
+
+  <div class="releve" aria-label="Exemple de liste d’abonnements d’une entreprise de 40 personnes">
+    <div class="tete">Exemple : entreprise de 40 personnes</div>
+    <div class="ligne alerte"><b>Outil de design</b><span class="prix">360 €/an</span><small>Compte de Claire, partie en mars</small></div>
+    <div class="ligne alerte"><b>Messagerie d’équipe</b><span class="prix">1 080 €/an</span><small>3 comptes sans connexion depuis 6 mois</small></div>
+    <div class="ligne"><b>Stockage en ligne</b><span class="prix">1 500 €/an</span><small>25 comptes, tous actifs</small></div>
+    <div class="ligne"><b>Visioconférence, équipe commerciale</b><span class="prix">1 020 €/an</span><small>Utilisée</small></div>
+    <div class="ligne alerte"><b>Visioconférence, équipe technique</b><span class="prix">780 €/an</span><small>Fait la même chose que la ligne du dessus</small></div>
+    <div class="total">À vérifier : 2 220 € par an</div>
+  </div>
+  <p class="note">Exemple illustratif. Les montants varient selon votre entreprise.</p>
+</div>
+
+<section>
+<div class="wrap">
+  <h2>Ce que Licences vous donne</h2>
+  <div class="rang"><h3>La liste complète, enfin</h3><p>Chaque abonnement, son prix, sa date de renouvellement et les personnes concernées. Vous la saisissez ou vous la tirez de vos relevés.</p></div>
+  <div class="rang"><h3>Ce qui coûte pour rien</h3><p>Les comptes payés et inutilisés, les logiciels en double d’une équipe à l’autre. Le coût annuel est calculé par outil et par personne.</p></div>
+  <div class="rang"><h3>Un rappel avant chaque renouvellement</h3><p>Vous décidez de garder ou d’arrêter avant d’être prélevé, pas après.</p></div>
+</div>
+</section>
+
+<section class="offre" id="offre">
+<div class="wrap">
+  <h2>Accès anticipé à Licences</h2>
+  <div class="carte">
+    <div class="montant">79 €<span> par mois</span></div>
+    <p class="jour">Soit environ 2,60 € par jour, pour toute l’entreprise.</p>
+    <ul>
+      <li>Inventaire de tous vos abonnements</li>
+      <li>Comptes inutilisés et doublons repérés</li>
+      <li>Rappel avant chaque renouvellement</li>
+    </ul>
+    <p class="garantie"><b>Satisfait ou remboursé pendant 14 jours.</b> Si Licences ne vous sert pas, écrivez à <a href="mailto:licences.atlas@gmail.com">licences.atlas@gmail.com</a> : vous êtes remboursé en totalité sous 5 jours ouvrés, sans justification.</p>
+    <a class="btn" href="https://buy.stripe.com/test_9B68wJ0k2flw7hr72yao801">Payer 79 € et réserver mon accès</a>
+    <p class="sans">Sans engagement, résiliable à tout moment.</p>
+  </div>
+  <p class="note">Accès anticipé : vous recevez vos identifiants par email sous 7 jours. Le paiement est sécurisé par Stripe.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2>Questions fréquentes</h2>
+  <details><summary>Est-ce que ça marche pour mon entreprise ?</summary><p>Licences est pensé pour les entreprises de 10 à 100 personnes sans service informatique, où chaque équipe souscrit ses outils dans son coin.</p></details>
+  <details><summary>Combien de temps ça me prend ?</summary><p>Quelques minutes pour saisir vos principaux abonnements, ou pour importer vos relevés. Ensuite, vous n’avez plus rien à faire, sauf décider quand un rappel arrive.</p></details>
+  <details><summary>Que se passe-t-il si je veux arrêter ?</summary><p>Vous résiliez quand vous voulez, sans préavis. Pendant les 14 premiers jours, vous pouvez en plus être remboursé en totalité.</p></details>
+  <details><summary>À quoi sert exactement ce que je paie ?</summary><p>À l’accès à Licences : l’inventaire de vos abonnements, le repérage des comptes inutilisés et des doublons, et les rappels avant renouvellement. Vous payez 79 € par mois pour toute l’entreprise, quel que soit le nombre de personnes.</p></details>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">Licences. Mentions légales, conditions générales de vente et politique de confidentialité : à venir avant l’ouverture des paiements.</div></footer>
+
+<div class="barre"><a class="btn" href="#offre">Réserver mon accès, 79 €/mois</a></div>
+</body>
+</html>
